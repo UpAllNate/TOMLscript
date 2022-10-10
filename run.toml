@@ -1,0 +1,32 @@
+
+[sequence]
+
+[sequence.AddFirstThree]
+name = "Add three lowest values"
+
+# First step, get numbers from user
+[sequence.AddFirstThree.1]
+function = "getNumbers"
+
+# Sort the collected values
+[sequence.AddFirstThree.2]
+function = "sort"
+input = ["sequence","AddFirstThree","1","result"]
+
+# Add first two numbers
+[sequence.AddFirstThree.3]
+function = "add"
+input_1 = ["sequence","AddFirstThree","2","result",0]
+input_2 = ["sequence","AddFirstThree","2","result",1]
+
+# Add that sum to the third list number
+[sequence.AddFirstThree.4]
+function = "add"
+input_1 = ["sequence","AddFirstThree","3","result"]
+input_2 = ["sequence","AddFirstThree","2","result",2]
+
+# Print result
+[sequence.AddFirstThree.5]
+function = "print_TextValue"
+input_Text = "Result: "
+input_Value = ["sequence","AddFirstThree","4","result"]
